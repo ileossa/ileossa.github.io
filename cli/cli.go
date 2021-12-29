@@ -18,9 +18,8 @@ func main() {
 
 	switch os.Args[1] {
 	case "quitoque":
-		fmt.Println("foobar")
 		fQuitoque.Parse(os.Args[2:])
-		Q.Quitoque("ileossa")
+		Q.GetHTML("https://www.quitoque.fr/recettes/papillotte-de-poisson-blanc-aux-tomates-sechees/2021-01")
 		break
 	default:
 		fmt.Println("pls use -h for help")

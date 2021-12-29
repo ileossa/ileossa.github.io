@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Barista world</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Barista world">
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/stylesheet.css?v=1">
+</head>
+<body>
+  <header>
+    <h1>Order</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="http://localhost:8080/">Home</a></li>
+    </ul>
+  </nav>
+
+
+  <section>
+    <!-- Check if customer have order and print first title or second for nothing-->
+    {{if eq . "ORDER"}}
+      <h2>Your commande {{.USER_NAME}}</h2>
+    {{else}}
+      <h2>You haven't oder {{.USER_NAME}}</h2>
+    {{end}}
+
+    <!-- list all items order-->
+    {{range .ITEMS}}
+      <li>{{.}}</li>
+    {{end}}
+  </section>
+
+</body>
+</html>
