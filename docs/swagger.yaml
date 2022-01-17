@@ -1,0 +1,14 @@
+info:
+  contact:
+    email: none@email.com
+    name: API Support
+    url: http://www.github.com/ileossa
+  description: This is a poc, to learn go project.
+  license:
+    name: GNU AGPLv3
+    url: https://spdx.org/licenses/AGPL-3.0-or-later.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger barista world application
+  version: 0.1-beta
+paths: {}
+swagger: "2.0"

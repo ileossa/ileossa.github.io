@@ -20,7 +20,16 @@ var beverages = []beverage{
 	{ID: "2", Name: "Mocha", Description: "Un espresso riche et corsé, mélangé avec du sirop saveur chocolat et du lait chauffé à la vapeur.", Ingredients: ingredients},
 }
 
-// getBeverages responds with the list of all beverages as JSON
+// @BasePath /api/v1
+// GetBeverages godoc
+// @Summary GetBeverages responds with the list of all beverages as JSON
+// @Schemes
+// @Description list of all beverages
+// @Tags Beverages
+// @Accept json
+// @Produce json
+// @Success 200 {struct} beverage
+// @Router /menus [get]
 func GetBeverages(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, beverages)
 }

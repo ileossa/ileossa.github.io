@@ -1,0 +1,60 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a poc, to learn go project.",
+        "title": "Swagger barista world application",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.github.com/ileossa",
+            "email": "none@email.com"
+        },
+        "license": {
+            "name": "GNU AGPLv3",
+            "url": "https://spdx.org/licenses/AGPL-3.0-or-later.html"
+        },
+        "version": "0.1-beta"
+    },
+    "paths": {
+        "/menus": {
+            "get": {
+                "description": "list of all beverages",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Beverages"
+                ],
+                "summary": "GetBeverages responds with the list of all beverages as JSON",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "struct"
+                        }
+                    }
+                }
+            }
+        },
+        "/ping": {
+            "get": {
+                "description": "We can check if application is up",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Ping",
+                "responses": {
+                    "200": {
+                        "description": "return UP if application is ready",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
