@@ -8,8 +8,8 @@ import (
 
 // order represents data about a order
 type order struct {
-	ID   string `json:"id"`
-	Menu int    `json:"menu"`
+	ID       string   `json:"id"`
+	Beverage beverage `json:"beverage"`
 }
 
 var orders = []order{}
@@ -17,13 +17,13 @@ var orders = []order{}
 func GetOrderById(c *gin.Context) {
 	id := c.Param("id")
 
-	for _, a := range beverages {
+	for _, a := range orders {
 		if a.ID == id {
 			c.IndentedJSON(http.StatusOK, a)
 			return
 		}
 	}
-	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "beverage not found"})
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "order not found, wrong id ?"})
 }
 
 // postOrder adds an new order from a JSON request body

@@ -32,9 +32,9 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/menus": {
+        "/api/v1": {
             "get": {
-                "description": "list of all beverages",
+                "description": "list of beverage selected",
                 "consumes": [
                     "application/json"
                 ],
@@ -44,7 +44,7 @@ var doc = `{
                 "tags": [
                     "Beverages"
                 ],
-                "summary": "GetBeverages responds with the list of all beverages as JSON",
+                "summary": "GetBeverages responds with the beverage by Id passing as JSON",
                 "responses": {
                     "200": {
                         "description": "OK",

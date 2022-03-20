@@ -37,15 +37,25 @@ func main() {
 	api := router.Group("/api/v1")
 	{
 		api.GET("/ping", handlers.Ping)
-		api.GET("/menus", handlers.GetBeverages)
-		api.GET("/order/:id", handlers.GetOrderById)
-		api.POST("/order", handlers.PostOrder)
-	}
+		beverages := api.Group("/beverages")
+		{
+			beverages.GET("/", handlers.GetBeverages)
+			beverages.GET("/:id", handlers.GetOrderById)
+			beverages.POST("/", handlers.NewBeverage)
+		}
+		order := api.Group("/order")
+		{
+			order.GET("/:id", handlers.GetOrderById)
+			order.POST("/", handlers.PostOrder)
+		}
 
-	// Multipart
-	// Set a lower memory limit for multipart forms (default is 32 MiB)
-	router.MaxMultipartMemory = 8 << 20 // 8 MiB
-	router.POST("/upload", handlers.UploadFile)
+		user := api.Group("/user")
+		{
+			user.POST("/", handlers.NewUser)
+			// user.GET("/:id", handlers.GetUserById)
+			// user.GET("/", handlers.GetUsers)
+		}
+	}
 
 	router.Run("localhost:8080")
 }

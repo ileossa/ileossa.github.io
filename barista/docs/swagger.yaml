@@ -11,11 +11,11 @@ info:
   title: Swagger barista world application
   version: 0.1-beta
 paths:
-  /menus:
+  /api/v1:
     get:
       consumes:
       - application/json
-      description: list of all beverages
+      description: list of beverage selected
       produces:
       - application/json
       responses:
@@ -23,7 +23,7 @@ paths:
           description: OK
           schema:
             type: struct
-      summary: GetBeverages responds with the list of all beverages as JSON
+      summary: GetBeverages responds with the beverage by Id passing as JSON
       tags:
       - Beverages
   /ping:
